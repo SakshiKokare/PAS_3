@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-main: #090e17;
+    --bg-card: #111827;
+    --bg-card-hover: #1f2937;
+    --border: #374151;
+    --text-main: #f9fafb;
+    --text-muted: #9ca3af;
+    --primary: #3b82f6;
+    --success: #10b981;/* Sidebar Styles - Solid Blue Theme */
+.sidebar {
+    width: 260px;
+    background-color: #173673; /* Deep blue from your screenshot */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    flex-shrink: 0; /* Prevents the sidebar from getting squished */
+    box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+.sidebar * {
+    color: #ffffff; /* Forces all text inside the sidebar to be white */
+}
+
+/* Top Navigation Bar Styles */
+.topbar {
+    height: 75px;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between; /* This forces the search bar to the left and profile to the right */
+    align-items: center;
+    padding: 0 30px;
+    z-index: 5;
+}
+
+.search-box input {
+    width: 350px;
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    font-size: 0.9rem;
+    background: var(--bg-main);
+    color: var(--text-main);
+    transition: 0.3s;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.profile-info {
+    text-align: right;
+}
+
+.profile-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.profile-dept {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), #8b5cf6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.brand {
+    padding: 30px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand-icon {
+    font-size: 1.8rem;
+    transform: rotate(-15deg);
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 25px 15px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-item {
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: #94a3b8; /* Slightly dimmed blue/gray for inactive text */
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
+
+.nav-item.active {
+    background-color: #3b82f6; /* The bright blue highlight for Assessment */
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; color: var(--text-main); }
+body { display: flex; height: 100vh; background-color: var(--bg-main); overflow: hidden; }
+
+/* Main Layout Setup */
+.main-wrapper { flex-grow: 1; display: flex; flex-direction: column; overflow-y: auto; }
+.content.flex-row { display: flex; padding: 20px; gap: 20px; align-items: flex-start; }
+.main-assessment-area { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+.right-panel { width: 300px; display: flex; flex-direction: column; }
+
+/* Top Meta & Student Bar */
+.meta-bar, .student-bar { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 15px 25px; display: flex; justify-content: space-between; align-items: center; }
+.meta-item { display: flex; align-items: center; gap: 12px; }
+.meta-icon { font-size: 1.5rem; }
+.student-info-left { display: flex; align-items: center; gap: 15px; }
+.student-avatar { width: 50px; height: 50px; border-radius: 50%; background: #6366f1; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 1.2rem; }
+.student-name { font-size: 1.2rem; font-weight: 600; }
+.badge-present { background: rgba(16, 185, 129, 0.2); color: var(--success); padding: 4px 12px; border-radius: 20px; border: 1px solid var(--success); font-size: 0.85rem; font-weight: 600; }
+
+/* Rubric Grid */
+.rubric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 20px; }
+.rubric-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 15px; }
+.rubric-header { display: flex; gap: 10px; align-items: center; margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+.rubric-icon { width: 35px; height: 35px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+
+/* Custom Radio Buttons */
+.radio-option { display: flex; justify-content: space-between; align-items: center; padding: 10px; border-radius: 8px; cursor: pointer; transition: 0.2s; font-size: 0.85rem; border: 1px solid transparent; }
+.radio-option:hover { background: var(--bg-card-hover); border-color: var(--border); }
+.radio-option input[type="radio"] { margin-right: 10px; accent-color: var(--primary); transform: scale(1.2); cursor: pointer; }
+.mark-badge { background: #1e293b; padding: 2px 8px; border-radius: 6px; font-weight: bold; border: 1px solid var(--border); }
+
+/* Total Section */
+.total-section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.circle-progress { width: 120px; height: 120px; border-radius: 50%; background: conic-gradient(var(--primary) 100%, #1e293b 0); display: flex; align-items: center; justify-content: center; padding: 8px; }
+.circle-inner { background: var(--bg-card); width: 100%; height: 100%; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.circle-inner h2 { font-size: 2.2rem; color: #fff; margin:0;}
+.formula-box { background: #1e293b; padding: 15px; border-radius: 8px; width: 250px; font-size: 0.85rem; }
+.calc-row { display: flex; justify-content: space-between; margin-bottom: 5px; color: var(--text-muted); }
+
+/* Bottom Controls */
+.bottom-controls { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; margin-bottom: 20px; }
+.remarks-box, .override-box { background: var(--bg-card); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+textarea { width: 100%; height: 80px; background: #1e293b; border: 1px solid var(--border); color: #fff; border-radius: 8px; padding: 10px; margin-top: 10px; resize: none; }
+.dark-input { background: #1e293b; border: 1px solid var(--border); color: #fff; padding: 10px; border-radius: 8px; width: 100%; }
+
+/* Buttons */
+.action-buttons { display: flex; justify-content: space-between; gap: 15px; padding-top: 10px; }
+.btn { padding: 12px 25px; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.btn-primary { background: #3730a3; color: white; flex: 2; transition: 0.2s; }
+.btn-primary:hover { background: #4338ca; }
+.btn-secondary { background: #6b21a8; color: white; flex: 1; }
+.btn-outline-danger { background: transparent; border: 1px solid #ef4444; color: #ef4444; }
+
+/* Right Panel Elements */
+.panel-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.rules-list { list-style: none; font-size: 0.85rem; color: var(--text-muted); line-height: 1.8; margin-top:15px; }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; }
+.success-box { background: rgba(16, 185, 129, 0.1); border: 1px solid var(--success); color: var(--success); padding: 15px; border-radius: 12px; margin-top: 15px; }
+
+/* Light Mode Theme Overrides */
+body.light-mode {
+    --bg-main: #f1f5f9;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f8fafc;
+    --border: #cbd5e1;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+}
+
+/* Specific component fixes for light mode */
+body.light-mode .circle-inner h2 { color: var(--text-main); }
+body.light-mode textarea, 
+body.light-mode .dark-input { 
+    background: #f8fafc; 
+    color: var(--text-main); 
+}
+body.light-mode .mark-badge { 
+    background: #e2e8f0; 
+    color: var(--text-main); 
+}
+body.light-mode .formula-box { 
+    background: #f8fafc; 
+    border: 1px solid var(--border);
+}
+body.light-mode .circle-progress {
+    background: conic-gradient(var(--primary) 100%, #e2e8f0 0);
+}
